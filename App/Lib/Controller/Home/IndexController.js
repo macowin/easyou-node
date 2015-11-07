@@ -48,7 +48,7 @@ module.exports = Controller("Home/BaseController", function() {
 				return rs;
 			});
 			//浏览数加1
-			D('Contents').where({id: self.get('id')}).updateInc('view');
+			D('Contents').where(map).updateInc('view');
 			self.assign('data', data);
 			self.display();
 		},
