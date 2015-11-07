@@ -17,10 +17,6 @@ module.exports = Model(function() {
                         data['data'][k]['m'] = formatDate("m", data['data'][k]['time']);
                         data['data'][k]['d'] = formatDate("d", data['data'][k]['time']);                        
                         data['data'][k]['time'] = formatDate("y-m-d h:i:s", data['data'][k]['time']);
-                        //自定义url处理
-                        if(!isEmpty(data['data'][k]['url'])){
-                            data['data'][k]['id']=data['data'][k]['url'];
-                        }
                     }
                     return data;
                 });
