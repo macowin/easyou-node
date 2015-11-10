@@ -55,7 +55,8 @@ module.exports = Controller("Admin/BaseController", function(){
 						var pwd=self.post('password');
 						if(md5(pwd+"eyblog")==rs){
 							var pwd1=md5(self.post('password1')+"eyblog");
-							return D('Users').where({id:data.id}).update({pass:pwd1}).then(function(res){
+							var user=self.post('user');
+							return D('Users').where({id:data.id}).update({pass:pwd1,user:user}).then(function(res){
 								if(res){
 									//修改成功
 									return self.redirect("/admin/system/change?err=1");
