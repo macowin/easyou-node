@@ -159,7 +159,37 @@
 
                     </div>
 
-                </div>               
+                </div>  
+
+                 <div class="form-group">
+
+                  <div class="label"><label>文章类型</label></div>
+
+                  <div class="field">
+
+                        <div class="button-group button-group-small radio">
+
+                            <label class="button <%if(content.ispage==1){%>active<%}%>">
+
+                            <input name="ispage" value="1" type="radio" <%if(content.ispage==1){%>checked="checked"<%}%>>
+
+                            <span class="icon icon-check"></span> 
+
+                              文章</label>
+
+                            <label class="button <%if(content.ispage==2){%>active<%}%>">
+
+                            <input name="ispage" value="2" type="radio"  <%if(content.ispage==2){%>checked="checked"<%}%>>
+
+                            <span class="icon icon-times"></span> 
+
+                            页面</label>
+
+                        </div>
+
+                    </div>
+
+                </div>                              
 
                 <div class="form-button"><button class="button bg-main" type="submit">提交</button></div>
 

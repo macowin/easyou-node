@@ -41,6 +41,36 @@ module.exports = Controller("Admin/BaseController", function(){
 			}else{
 
 			}
-		}
+		},
+		//密码修改
+		changeAction:function(){
+			var self=this;
+			if(self.isGet()){
+				self.assign("model","system");
+				self.assign("action","change");
+				self.display();
+			}else{
+				return self.session("userInfo").then(function(data){
+					return D("Users").where({id:data.id}).getField('pass').then(function(rs){
+						var pwd=self.post('password');
+						if(md5(pwd+"eyblog")==rs){
+							var pwd1=md5(self.post('password1')+"eyblog");
+							return D('Users').where({id:data.id}).update({pass:pwd1}).then(function(res){
+								if(res){
+									//修改成功
+									return self.redirect("/admin/system/change?err=1");
+								}else{
+									//修改失败
+									return self.redirect("/admin/system/change?err=2");
+								}
+							})
+						}else{
+							//密码不正确
+							return self.redirect("/admin/system/change?err=3");
+						}
+					});
+				});
+			}
+		}		
 	};
 });

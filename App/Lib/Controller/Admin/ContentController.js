@@ -44,7 +44,7 @@ module.exports = Controller("Admin/BaseController", function(){
 				data.text=self.post('content');
 				data.abscontent=subStr(removeTag(self.post('content')),400);
 				data.status=self.post('status')||0;
-				data.ispage=1;
+				data.ispage=self.post('ispage')||1;
 				data.iscomment=self.post('iscomment')||0;
 				data.url=self.post('url');
 				console.log(data);
