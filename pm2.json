@@ -1,0 +1,14 @@
+{
+  "apps": [{
+    "name": "C:UsersrccoderTep111easyou-node",
+    "script": "www/production.js",
+    "cwd": "C:\Users\rccoder\Tep\111/easyou-node",
+    "max_memory_restart": "1G",
+    "autorestart": true,
+    "node_args": [],
+    "args": [],
+    "env": {
+      
+    }
+  }]
+}
