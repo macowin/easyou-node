@@ -129,7 +129,7 @@ module.exports = Controller("Admin/BaseController", function(){
 			self.assign("action","mood");
 			if(self.isGet()){			//get请求渲染模板
 				var tag=self.getTag();
-				var page=self.get('page')?self.get('page'):1;
+				var page=self.get('p')?self.get('p'):1;
 				var data=D('Moods').getList(page);
 				self.assign("list",data);				
 				self.display();

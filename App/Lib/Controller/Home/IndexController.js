@@ -30,7 +30,7 @@ module.exports = Controller("Home/BaseController", function() {
 				self.assign('title', "分类");
 			}
 			map.ispage = 1;
-			var data = D('Contents').getList(map, page).then(function(data){
+			var data = D('Contents').getList(map, page,6).then(function(data){
                 //自定义url处理
                 for (var k in data['data']) {
 	                if(!isEmpty(data['data'][k]['url'])){

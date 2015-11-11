@@ -2,10 +2,10 @@
 module.exports = Model(function(){
     return {
         //获取心情列表
-        getList:function(page){
+        getList:function(page,total){
             var self=this;
             return self
-                .page(page,10)
+                .page(page,total||10)
                 .field("ey_users.user,ey_moods.*")
                 .join("ey_users ON ey_moods.uid=ey_users.id")
                 .order("ey_moods.time desc")

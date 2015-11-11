@@ -70,6 +70,20 @@
       </tbody>
 
      </table>
+  <div class="panel-foot text-center"> 
+  
+   <ul class="pagination  border-main">
+   <% 
+   if(list.total>1){
+   for(var i=1;i<list.total+1;i++){%>
+   <li <%if(list.page==i){%>class="active" style="background: #0AE;"<%}%>>
+        <a href="/admin/content/mood/p/<%=i%>"><%=i%></a>
+    </li>
+   <%}}%>
+   </ul>
+
+
+ </div>     
 
     </div> 
 

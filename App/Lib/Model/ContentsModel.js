@@ -2,10 +2,10 @@
 module.exports = Model(function() {
     return {
         // 获取文章列表
-        getList: function(map, page) {
+        getList: function(map, page,total) {
             var self = this;
             return self.where(map)
-                .page(page, 6)
+                .page(page, total||10)
                 .join("ey_users ON ey_contents.uid=ey_users.id")
                 .join("ey_tags ON ey_contents.tid=ey_tags.id")
                 .field("ey_contents.*,ey_users.user,ey_users.img,ey_tags.name as tag")
