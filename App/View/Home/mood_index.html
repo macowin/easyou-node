@@ -8,7 +8,7 @@
             <%include m_menu.html%>
 
             <%list.data.forEach(function(data){%>
-    <article id="post-douban-index-for-chrome" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-douban-index-for-chrome" class="article article-type-post fadein" itemscope="" itemprop="blogPost">
     <div class="media media-x"> 
         <a class="float-left" href="#"> 
         <img src="<%=_web.url%>resource/img/logos.png" class="radius" style="width: 80px;height: 80px;"> </a>
@@ -16,7 +16,9 @@
         <strong class="text-gray padding-big-bottom"><%=data.time%></strong> 
         <h3 class="text-big margin-bottom"><%=data.mood%> </h3>
         </div>
+    </div>
     </article>
+
     <%})%>
         
         <ul class="pager padding  clearfix margin-big"> 
@@ -29,8 +31,8 @@
                 <%}%>
                 <%}%>        
         </ul>
+
   <%include footer.html%>
-  
-  </div>
 </div>
+    </div>
 </body></html>
