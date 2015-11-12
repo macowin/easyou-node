@@ -4,7 +4,7 @@
  * session configs
  */exports.__esModule = true;exports['default'] = 
 { 
-  name: 'thinkjs', 
+  name: 'easyou', 
   type: 'file', 
   secret: 'MTE`KJV%', 
   timeout: 24 * 3600, 
