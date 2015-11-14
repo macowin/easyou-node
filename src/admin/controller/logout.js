@@ -4,10 +4,11 @@ import Base from './base.js';
 
 export default class extends Base {
   /**
-   * index action
+   * index action - reg
    * @return {Promise} []
    */
   * indexAction (self) {
-    return this.display()
+    self.session('user', '');
+    self.redirect('/');
   }
 }
